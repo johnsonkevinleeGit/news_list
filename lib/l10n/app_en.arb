@@ -1,0 +1,26 @@
+{
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+        "type": "text"
+    },
+    "language": "Language",
+    "@language": {
+        "type": "text"
+    },
+    "news": "News",
+    "@news": {
+        "type": "text"
+    },
+    "search": "Search",
+    "@search": {
+        "type": "text"
+    },
+    "menu": "Menu",
+    "@menu": {
+        "type": "text"
+    },
+    "settings": "Settings",
+    "@settings": {
+        "type": "text"
+    }
+}
