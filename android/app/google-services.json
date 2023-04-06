@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1060682944775",
+    "project_id": "news-list-d4659",
+    "storage_bucket": "news-list-d4659.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060682944775:android:6c1f7d714a2164098675a2",
+        "android_client_info": {
+          "package_name": "com.example.news_list"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1060682944775-34cofomtr0vrnfvhlhsip6rb403qs35h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLN9CAAZ7YcpLWoPzAtBpV-i81BXWHFNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1060682944775-34cofomtr0vrnfvhlhsip6rb403qs35h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1060682944775-kqlll6ele6kp2eplf0s8kmo0sam1i894.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterApplication1"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
