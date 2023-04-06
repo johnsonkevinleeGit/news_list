@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,7 +9,6 @@ mixin SupportedLocales {
 
   static final all = [enUS, es];
 
-  // handles defaulting to english, and matching country if specified in both
   static Locale getSupportedLocale(Locale locale) {
     final countryCode = locale.countryCode;
     final langCode = locale.languageCode;
@@ -22,30 +19,6 @@ mixin SupportedLocales {
       return loc.languageCode == langCode;
     }, orElse: () => SupportedLocales.enUS);
   }
-}
-
-Locale? getSupportedLanguageByCode(String? code) {
-  if (code == null) {
-    return null;
-  }
-
-  List<String> langCountrySplit;
-  if (code.contains('-')) {
-    langCountrySplit = code.split('-');
-  } else if (code.contains('_')) {
-    langCountrySplit = code.split('_');
-  } else {
-    langCountrySplit = [code];
-  }
-  final langCode = langCountrySplit.first;
-  final countryCode = langCountrySplit.last;
-
-  return SupportedLocales.all.firstWhere(
-    (loc) =>
-        loc.languageCode == langCode &&
-        (loc.countryCode == null || loc.countryCode == countryCode),
-        orElse: () => SupportedLocales.enUS
-  );
 }
 
 String getLanguageByString(String language) {
