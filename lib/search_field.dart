@@ -23,6 +23,7 @@ class SearchField extends ConsumerWidget {
                   onPressed: () => searchController.clear(),
                   icon: const Icon(Icons.close))
               : const SizedBox(),
+              suffixIconColor: Colors.white,
           border: const UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.white),
           ),

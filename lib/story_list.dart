@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_list/colors.dart';
 import 'package:news_list/main.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_list/search_field.dart';
@@ -20,6 +21,7 @@ class StoryList extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           itemCount: filteredStories?.length,
           itemBuilder: (context, i) {
+
             final story = filteredStories?[i];
             return InkWell(
               onTap: () async {
@@ -30,13 +32,15 @@ class StoryList extends ConsumerWidget {
               },
               child: Card(
                   child: ListTile(
-                dense: true,
-                title: Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: Text(story?.title ?? '',
-                      style: Theme.of(context).textTheme.bodyMedium),
-                ),
-              )),
+                    dense: true,
+                    title: Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: Text(story?.title ?? '',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium),
+                    ),
+                  )),
             );
           }),
     );

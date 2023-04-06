@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:news_list/colors.dart';
 import 'package:news_list/settings/settings_page.dart';
 
 class MyEndDrawer extends StatelessWidget {
@@ -9,7 +10,7 @@ class MyEndDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       width: 200,
-      backgroundColor: Colors.blue,
+      backgroundColor: primaryColor,
       child: ListView(padding: EdgeInsets.zero, children: [
         Padding(
           padding: const EdgeInsets.only(top: 20, left: 20),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:news_list/colors.dart';
 import 'package:news_list/end_drawer.dart';
 import 'package:news_list/locale_state.dart';
 import 'package:news_list/story_list.dart';
@@ -51,8 +52,9 @@ class MyHomePage extends ConsumerWidget {
         return ProviderScope(
             overrides: [providerOfStories.overrideWith((ref) => storyList)],
             child: Scaffold(
-              backgroundColor: Colors.blue,
+              backgroundColor: primaryColor,
               appBar: AppBar(
+                 backgroundColor: primaryColor,
                 title: Text(title),
                 actions: [
                   Builder(builder: (context) {

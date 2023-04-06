@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:news_list/colors.dart';
 import 'package:news_list/locale_state.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -12,14 +13,17 @@ class SettingsPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: primaryColor,
         title: Text(AppLocalizations.of(context)!.settings),
       ),
+      
       body: Column(children: [
         Padding(
           padding: const EdgeInsets.all(12),
           child: DropdownButtonFormField(
             value: locale,
             decoration: InputDecoration(
+              focusColor: primaryColor,
               border: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(7)),
               ),
