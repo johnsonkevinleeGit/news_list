@@ -12,27 +12,34 @@ class StoryList extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final filteredStories = ref.watch(providerOfFilteredStories);
 
-    return ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        itemCount: filteredStories?.length,
-        itemBuilder: (context, i) {
-          final story = filteredStories?[i];
-          return InkWell(
-            onTap: () async {
-              final url = Uri.parse(story?.url ?? '');
-              if (await canLaunchUrl(url)) {
-                launchUrl(url);
-              }
-            },
-            child: Card(
-                color: Colors.grey,
-                child: Padding(
+    return RefreshIndicator(
+      onRefresh: () async {
+        return ref.refresh(providerOfGetTopStories);
+      },
+      child: ListView.builder(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          itemCount: filteredStories?.length,
+          itemBuilder: (context, i) {
+            final story = filteredStories?[i];
+            return InkWell(
+              onTap: () async {
+                final url = Uri.parse(story?.url ?? '');
+                if (await canLaunchUrl(url)) {
+                  launchUrl(url);
+                }
+              },
+              child: Card(
+                  child: ListTile(
+                dense: true,
+                title: Padding(
                   padding: const EdgeInsets.all(12),
                   child: Text(story?.title ?? '',
                       style: Theme.of(context).textTheme.bodyMedium),
-                )),
-          );
-        });
+                ),
+              )),
+            );
+          }),
+    );
   }
 }
 
