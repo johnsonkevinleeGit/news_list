@@ -9,7 +9,7 @@ class MyEndDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       width: 200,
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.blueGrey,
       child: ListView(padding: EdgeInsets.zero, children: [
         Padding(
           padding: const EdgeInsets.only(top: 20, left: 20),

@@ -51,9 +51,11 @@ class MyHomePage extends ConsumerWidget {
         return ProviderScope(
             overrides: [providerOfStories.overrideWith((ref) => storyList)],
             child: Scaffold(
-              backgroundColor: Colors.blue,
+              backgroundColor: Colors.blueGrey,
               appBar: AppBar(
+                backgroundColor: Colors.blueGrey,
                 title: Text(title),
+                centerTitle: true,
                 actions: [
                   Builder(builder: (context) {
                     return IconButton(

@@ -12,6 +12,8 @@ class SettingsPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
+        centerTitle: true,
         title: Text(AppLocalizations.of(context)!.settings),
       ),
       body: Column(children: [

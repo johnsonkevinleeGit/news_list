@@ -51,7 +51,8 @@ final providerOfFilteredStories = StateProvider<List<Story?>?>((ref) {
       ?.where((element) =>
           (element?.title ?? '').toLowerCase().contains(searchText))
       .toList();
-  filteredStories?.sort((a, b) =>
-      (a?.title ?? '').toLowerCase().compareTo((b?.title ?? '').toLowerCase()));
+  // Add to a sort button
+  // filteredStories?.sort((a, b) =>
+  //     (a?.title ?? '').toLowerCase().compareTo((b?.title ?? '').toLowerCase()));
   return filteredStories;
 }, dependencies: [providerOfStories]);
