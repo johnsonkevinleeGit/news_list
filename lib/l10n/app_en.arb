@@ -22,5 +22,9 @@
     "settings": "Settings",
     "@settings": {
         "type": "text"
+    },
+    "sort": "Sort",
+    "@sort": {
+        "type": "text"
     }
 }

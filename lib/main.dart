@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:news_list/end_drawer.dart';
+import 'package:news_list/l10n/app_localizations.dart';
 import 'package:news_list/locale_state.dart';
+import 'package:news_list/sort_button.dart';
 import 'package:news_list/story_list.dart';
 import 'package:news_list/search_field.dart';
 import 'package:news_list/story_api_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'story_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -51,14 +52,14 @@ class MyHomePage extends ConsumerWidget {
         return ProviderScope(
             overrides: [providerOfStories.overrideWith((ref) => storyList)],
             child: Scaffold(
-              backgroundColor: Colors.blueGrey,
               appBar: AppBar(
                 backgroundColor: Colors.blueGrey,
-                title: Text(title),
+                title: Text(title, style: const TextStyle(color: Colors.white)),
                 centerTitle: true,
                 actions: [
                   Builder(builder: (context) {
                     return IconButton(
+                        color: Colors.white,
                         onPressed: () {
                           Scaffold.of(context).openEndDrawer();
                         },
@@ -70,9 +71,20 @@ class MyHomePage extends ConsumerWidget {
               body: Center(
                   child: Column(
                 mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Padding(padding: EdgeInsets.all(15), child: SearchField()),
-                  Expanded(child: StoryList()),
+                children: [
+                  Row(children: [
+                    const Expanded(
+                      child: Padding(
+                          padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
+                          child: SearchField()),
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.fromLTRB(5, 15, 15, 15),
+                        child: Tooltip(
+                            message: AppLocalizations.of(context)!.sort,
+                            child: const SortButton()))
+                  ]),
+                  const Expanded(child: StoryList()),
                 ],
               )),
             ));

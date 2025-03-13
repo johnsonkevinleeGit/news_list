@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:news_list/l10n/app_localizations.dart';
 import 'package:news_list/settings/settings_page.dart';
 
 class MyEndDrawer extends StatelessWidget {
@@ -19,7 +19,7 @@ class MyEndDrawer extends StatelessWidget {
                   .titleLarge
                   ?.copyWith(color: Colors.white)),
         ),
-        const Divider(color: Colors.white, thickness: 1),
+        const Divider(color: Colors.white, thickness: 2),
         InkWell(
           onTap: () {
             Navigator.of(context).pop();

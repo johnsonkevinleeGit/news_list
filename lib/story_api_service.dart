@@ -13,7 +13,7 @@ class StoryAPIService {
       final idList = contentList.map((e) => e as int).toList();
 
       final responseList =
-          await Future.wait([...idList.map((id) => getStory(id)).take(10)]);
+          await Future.wait([...idList.map((id) => getStory(id)).take(20)]);
 
       return responseList;
     }
