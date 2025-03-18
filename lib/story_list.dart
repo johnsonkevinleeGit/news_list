@@ -23,6 +23,7 @@ class StoryList extends ConsumerWidget {
           itemBuilder: (context, i) {
             final story = filteredStories?[i];
             return Card(
+              key: ValueKey(story),
                 color: Colors.white60,
                 child: InkWell(
                     borderRadius: BorderRadius.circular(12),
@@ -34,11 +35,17 @@ class StoryList extends ConsumerWidget {
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(20),
-                      child: Text(story?.title ?? '',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium
-                              ?.copyWith(fontWeight: FontWeight.w600)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(story?.title ?? '',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(fontWeight: FontWeight.w600)),
+                          Text('${story?.score.toString() ?? ''} points by ${story?.by}')
+                        ],
+                      ),
                     )));
           }),
     );
